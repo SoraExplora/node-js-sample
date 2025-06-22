@@ -1,14 +1,6 @@
 pipeline {
     agent any
 
-    tools {
-        nodejs "NodeJS"   
-    }
-
-    environment {
-        // Add any ENV vars if needed here
-    }
-
     stages {
         stage('Install Dependencies') {
             steps {
