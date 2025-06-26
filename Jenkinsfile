@@ -33,6 +33,12 @@ pipeline {
         sh 'docker build -t nodejs-app:latest .'
       }
     }
+    stage('Load Image into kind') {
+  steps {
+    sh 'kind load docker-image nodejs-app:latest'
+  }
+}
+
 
     stage('Push to Nexus (Optional)') {
       steps {

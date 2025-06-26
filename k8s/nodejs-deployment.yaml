@@ -14,10 +14,13 @@ spec:
     spec:
       containers:
       - name: nodejs
-        image: nodejs-app:v1
-        imagePullPolicy: Never
+        image: soraexplora/nodejs-app:v1
+        imagePullPolicy: Always  # because it should pull the latest from the registry
         ports:
         - containerPort: 3000
+      # Optional if your registry is private:
+      # imagePullSecrets:
+      # - name: regcred
 ---
 apiVersion: v1
 kind: Service
